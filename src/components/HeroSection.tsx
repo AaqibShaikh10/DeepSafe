@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroRobot from "@/assets/hero-robot.jpg";
 
@@ -23,19 +24,23 @@ const HeroSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button 
-                size="lg" 
-                className="cyber-button text-accent-foreground font-semibold px-8 py-6 text-lg"
-              >
-                DETECT
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg transition-all duration-300"
-              >
-                LOGIN
-              </Button>
+              <Link to="/detect">
+                <Button 
+                  size="lg" 
+                  className="cyber-button text-accent-foreground font-semibold px-8 py-6 text-lg"
+                >
+                  DETECT
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-accent text-accent hover:bg-accent hover:text-accent-foreground px-8 py-6 text-lg transition-all duration-300"
+                >
+                  LOGIN
+                </Button>
+              </Link>
             </div>
           </div>
 
