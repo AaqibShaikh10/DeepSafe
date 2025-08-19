@@ -29,22 +29,22 @@ const About = () => {
 
   const teamMembers = [
     {
-      name: "Dr. Sarah Chen",
+      name: "Muhammad Aaqib Shaikh",
       role: "Chief Technology Officer",
       expertise: "AI & Machine Learning"
     },
     {
-      name: "Marcus Rodriguez",
+      name: "Abdul Moeed Khan",
       role: "Lead AI Researcher",
       expertise: "Computer Vision"
     },
     {
-      name: "Dr. Elena Vasquez",
+      name: "Muhammad Saqib Shaikh",
       role: "Data Science Director",
       expertise: "Audio Processing"
     },
     {
-      name: "James Wilson",
+      name: "Waleed Akhtar",
       role: "Product Director",
       expertise: "User Experience"
     }
