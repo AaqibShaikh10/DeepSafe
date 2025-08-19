@@ -8,35 +8,50 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 240 25% 8%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 240 25% 12%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 240 25% 12%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 270 100% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 240 25% 15%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 240 25% 15%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 240 25% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 240 25% 20%;
+    --input: 240 25% 15%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 1rem;
+
+    /* DeepSafe Design System */
+    --gradient-primary: linear-gradient(135deg, hsl(270 100% 25%), hsl(240 100% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(270 80% 15%), hsl(240 90% 25%), hsl(220 100% 35%));
+    --gradient-card: linear-gradient(135deg, hsl(240 25% 12% / 0.8), hsl(270 25% 15% / 0.9));
+    --gradient-button: linear-gradient(135deg, hsl(180 100% 50%), hsl(180 100% 60%));
+    --gradient-button-hover: linear-gradient(135deg, hsl(180 100% 45%), hsl(180 100% 55%));
+    
+    --cyber-glow: 0 0 30px hsl(180 100% 50% / 0.3);
+    --cyber-glow-strong: 0 0 50px hsl(180 100% 50% / 0.5);
+    --glass-bg: hsl(240 25% 15% / 0.1);
+    --glass-border: hsl(180 100% 50% / 0.2);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-glow: box-shadow 0.3s ease, transform 0.3s ease;
 
     --sidebar-background: 0 0% 98%;
 
@@ -101,5 +116,48 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    background: var(--gradient-hero);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent;
+  }
+  
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--cyber-glow);
+  }
+  
+  .cyber-button {
+    background: var(--gradient-button);
+    transition: var(--transition-glow);
+  }
+  
+  .cyber-button:hover {
+    background: var(--gradient-button-hover);
+    box-shadow: var(--cyber-glow-strong);
+    transform: translateY(-2px);
+  }
+  
+  .hero-section {
+    background: var(--gradient-hero);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300ffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.3;
   }
 }
